@@ -108,7 +108,7 @@ Pour ajouter une valeur, le script crée un nouveau noeud dans le réseau, effec
 
 # Expérimentations
 
-Pour les expérimentations, j'ai testé sous cette environnement :
+Pour les expérimentations, j'ai testé sous cet environnement :
 
 - Ubuntu 22.04
 - Python 3.10.6
@@ -154,7 +154,7 @@ python3 set.py -P 8000 -k luigi -v '+33 6 78 35 80 88'
 
 ![Logs du second noeud](imgs/set_value_node.png)
 
-On remarque les deux noeuds du réseau sur les ports 8000 et 8001, ont découvert un nouveau noeud sur le réseau au port 24926, suite à la demande de ce noeud, pour stocker une donnée. Ils ont ensuite reçu tous les deux une requête pour stocker une donnée. Dans Kademlia, contrairement à Chord, la donnée est répliquée sur un certain nombre de noeud. Dans notre exemple, elle est stocké sur les deux noeuds.
+On remarque les deux noeuds du réseau sur les ports 8000 et 8001, ont découvert un nouveau noeud sur le réseau au port 24926, suite à la demande de ce noeud, pour stocker une donnée. Ils ont ensuite reçu tous les deux une requête pour stocker une donnée. Dans Kademlia, contrairement à Chord, la donnée est répliquée sur un certain nombre de noeud. Dans notre exemple, elle est stockée sur les deux noeuds.
 
 ## Récupération de la donnée
 
@@ -171,7 +171,7 @@ python3 get.py -P 8001 -k luigi
 
 ![Logs de l'autre noeud](imgs/get_value_original_node.png)
 
-Nous arrivons bien à récupérer la valeur stockée sous la clé $luigi$ qui est $+33\space6\space78\space35\space80\space88$. Nous remarquons également que la demande GET n'est arrivée que sur le noeud au port 8001 et que celui-ci a répondu directement. Ce phénomène est normal puisque que ce noeud possède la donnée demandé. Finalement, le nouveau noeud a été ajouté aux tables de routages respectives, des noeuds sur les ports 8000 et 8001.
+Nous arrivons bien à récupérer la valeur stockée sous la clé $luigi$ qui est $+33\space6\space78\space35\space80\space88$. Nous remarquons également que la demande GET n'est arrivée que sur le noeud au port 8001 et que celui-ci a répondu directement. Ce phénomène est normal puisque que ce noeud possède la donnée demandée. Finalement, le nouveau noeud a été ajouté aux tables de routages respectives, des noeuds sur les ports 8000 et 8001.
 
 # Points d'amélioration
 
